@@ -104,23 +104,25 @@ display:block;
 /* ============================= */
 
 .hero{
-height:100vh;
-
-background-image:url("../img/hero.png" );
-background-size:cover;
-background-position:center;
-
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-
-color:white;
-
-position:relative;
-overflow:hidden;
+  height:100vh;
+  background-image:url("../img/hero.png");
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  position:relative;
+  overflow:hidden;
 }
 
+/* Celular */
+@media (max-width:768px){
+  .hero{
+    background-position: top center;
+  }
+}
 /* overlay */
 
 .hero::before{
@@ -293,6 +295,36 @@ box-shadow:0 20px 50px rgba(0,0,0,0.15);
 .collection-image img:hover{
 transform:scale(1.05);
 filter:brightness(1) contrast(1.1);
+}
+
+@keyframes zoomIn{
+from{
+transform:scale(1);
+}
+to{
+transform:scale(1.08);
+}
+}
+
+@keyframes reveal{
+from{
+opacity:0;
+transform:translateY(60px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.reveal.active{
+animation:reveal 1s ease forwards;
+}
+
+.navbar.scrolled{
+padding:18px 8%;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+background:rgba(255,255,255,0.98);
 }
 
 /* ============================= */
@@ -556,6 +588,15 @@ color:#000;
   background: #444;
 }
 
+/* soporte para celular */
+
+.product-card:active .hover-img{
+opacity:1;
+}
+
+.product-card:active .main-img{
+opacity:0;
+}
 
 
 /*-----------------------------------------------------------------------*/
