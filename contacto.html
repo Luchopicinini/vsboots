@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Envios | VS BOOTS</title>
+<link rel="icon" href="img/logo (2).png" type="image/png">
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- JS -->
+<script defer src="js/script.js"></script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">𝐕𝐒 𝐁𝐎𝐎𝐓𝐒</div>
+  <nav class="nav-links">
+    <a href="index.html">Inicio</a>
+    <a href="shop.html">Shop</a>
+    <a href="envios.html">Envíos</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+  <div class="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+
+<!-- SECCIÓN CONTACTO -->
+<section class="contact-section">
+  <h2 class="section-title">¿Tienes una sugerencia, consulta o reclamo?</h2>
+  <p class="section-subtitle">Estamos aquí para escucharte. Completa el formulario y te responderemos a la brevedad.</p>
+
+  <div class="contact-grid">
+    
+    <!-- FORMULARIO -->
+    <div class="contact-form-wrap">
+      <form class="contact-form" action="https://formspree.io/f/xeeralre" method="POST">
+
+        <input type="text" name="name" placeholder="Tu nombre" required>
+
+        <input type="email" name="email" placeholder="Tu correo electrónico" required>
+
+        <select name="topic" required>
+          <option value="" disabled selected>Selecciona tipo de mensaje</option>
+          <option value="sugerencia">Sugerencia</option>
+          <option value="consulta">Consulta</option>
+          <option value="reclamo">Reclamo</option>
+        </select>
+
+        <textarea name="message" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+        <button type="submit">Enviar mensaje</button>
+
+      </form>
+    </div>
+
+    <!-- INFO CONTACTO -->
+    <div class="contact-info">
+      <div class="info-item">
+        <i class="fas fa-envelope"></i>
+        <p>sofiamichelagb@gmail.com</p>
+      </div>
+
+      <div class="info-item">
+        <i class="fas fa-phone"></i>
+        <p>+56 9 4254 0654</p>
+      </div>
+
+      <div class="info-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <p>Santiago, Chile</p>
+      </div>
+
+      <div class="socials">
+        <a href="https://www.instagram.com/selvaniboots" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://wa.me/56942540654" target="_blank">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 VS BOOTS</p>
+  <p class="footer-contact">
+    Síguenos en
+    <a href="https://www.instagram.com/selvaniboots" target="_blank" class="ig-link">
+      <img src="img/insta.webp" alt="Instagram VS Boots">
+    </a>
+  </p>
+</footer>
+
+</body>
+</html>
