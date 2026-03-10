@@ -28,3 +28,25 @@ const nav = document.querySelector(".nav-links");
 toggle.addEventListener("click", () => {
 nav.classList.toggle("active");
 });
+
+function shareProduct(productName){
+
+const url = window.location.href
+const text = "Mira estas " + productName + " en VS BOOTS 👢"
+
+if(navigator.share){
+
+navigator.share({
+title: productName,
+text: text,
+url: url
+})
+
+}else{
+
+const whatsapp = "https://wa.me/?text=" + encodeURIComponent(text + " " + url)
+window.open(whatsapp, "_blank")
+
+}
+
+}

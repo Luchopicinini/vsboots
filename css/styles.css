@@ -106,7 +106,7 @@ display:block;
 .hero{
 height:100vh;
 
-background-image:url("../img/kate1.png" );
+background-image:url("../img/hero.png" );
 background-size:cover;
 background-position:center;
 
@@ -425,108 +425,98 @@ border-color:transparent
 /*-----------------------------------------------------------------------*/
 
 
-/*SHOP*/
+/* PRODUCT CARD */
 
-/* ===== SHOP GRID STYLE ===== */
-/* ==========================
-   PRODUCT CARD - ESTILO PREMIUM
-========================== */
-
-/* Contenedor general de la card */
-.product-card {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+.product-card{
+background:#fff;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+transition:0.3s;
 }
 
-.product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+.product-card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 20px rgba(0,0,0,0.15);
 }
 
-/* Contenedor de imágenes */
-.product-img-wrap {
-  width: 100%;
-  padding-top: 100%; /* ratio cuadrado */
-  position: relative;
-}
-.product-img-wrap img {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+/* IMAGEN */
+
+.product-img-wrap{
+width:100%;
+height:260px;
+position:relative;
+overflow:hidden;
 }
 
-/* Imagen principal */
-.product-img-wrap .main-img,
-.product-img-wrap .hover-img {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: opacity 0.5s ease;
+.product-img-wrap img{
+width:100%;
+height:100%;
+object-fit:cover;
+position:absolute;
+top:0;
+left:0;
+transition:opacity .4s;
 }
 
-/* Imagen hover */
-.product-img-wrap .hover-img {
-  opacity: 0;
+.hover-img{
+opacity:0;
 }
 
-.product-card:hover .hover-img {
-  opacity: 1;
+.product-card:hover .hover-img{
+opacity:1;
 }
 
-.product-card:hover .main-img {
-  opacity: 0;
+.product-card:hover .main-img{
+opacity:0;
 }
 
-/* INFO PRODUCTO */
-.product-info {
-  padding: 12px 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+/* INFO */
+
+.product-info{
+padding:15px;
 }
 
-/* Contenedor título + WhatsApp */
-.title-whatsapp {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+/* TITULO + PRECIO */
+
+.product-top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:10px;
 }
 
-/* Título del producto */
-.product-title {
-  font-size: 16px;
-  font-weight: 600;
-  color: #111;
-  margin: 0;
-  text-align: center;
+.product-title{
+font-size:16px;
+font-weight:600;
+margin:0;
+color:#111;
 }
 
-/* Botón WhatsApp al lado del título */
-.title-whatsapp-btn {
-  color: #25D366;
-  font-size: 20px;
-  transition: transform 0.2s ease;
+.price{
+font-size:16px;
+font-weight:700;
+color:#640505;
 }
 
-.title-whatsapp-btn:hover {
-  transform: scale(1.2);
+/* BOTON COMPARTIR */
+
+.product-share{
+text-align:center;
 }
 
-/* Precio */
-.price {
-  font-size: 16px;
-  font-weight: 500;
-  color: #555;
-  margin-top: 4px;
-  text-align: center;
+.share-btn{
+font-size:14px;
+color:#000000cc;
+text-decoration:none;
+display:inline-flex;
+align-items:center;
+gap:6px;
+transition:0.2s;
+}
+
+.share-btn:hover{
+color:#000;
 }
 
 /* NEWSLETTER */
@@ -1138,7 +1128,7 @@ margin-top:30px;
 }
 
 .beneficio{
-background:#fff;
+background:#ffffff;
 border:1px solid #eee;
 padding:30px;
 border-radius:12px;
@@ -1161,6 +1151,24 @@ font-size:14px;
 color:#555;
 }
 
+.beneficio i{
+font-size:35px;
+margin-bottom:15px;
+color:#000;
+}
+
+.beneficio{
+background:#fafafa;
+padding:30px;
+border-radius:12px;
+text-align:center;
+transition:0.3s;
+}
+
+.beneficio:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
 /* RESPONSIVE */
 
 @media (max-width:900px){
