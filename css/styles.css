@@ -1397,3 +1397,34 @@ background:black;
 color:white;
 }
 
+  /* CARD EXPANDIDA */
+
+.product-card.active{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%) scale(1.1);
+z-index:9999;
+width:420px;
+max-width:90%;
+box-shadow:0 25px 80px rgba(0,0,0,0.5);
+transition:all .3s ease;
+}
+
+/* FONDO OSCURO */
+
+.card-overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(4px);
+z-index:9990;
+display:none;
+}
+
+.card-overlay.active{
+display:block;
+}
