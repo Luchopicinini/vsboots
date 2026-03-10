@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" href="img/logo.png" type="image/png">
+
+<title>Envíos | VS BOOTS</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- JS -->
+<script defer src="js/script.js"></script>
+
+</head>
+
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+
+<div class="logo">𝐕𝐒 𝐁𝐎𝐎𝐓𝐒</div>
+
+<nav class="nav-links">
+<a href="index.html">Inicio</a>
+<a href="shop.html">Shop</a>
+<a href="envios.html">Envíos</a>
+<a href="contacto.html">Contacto</a>
+<a href="pago.html">Formas de pago</a>
+</nav>
+
+<!-- BOTONES IDIOMA -->
+<div class="language-switch">
+<span onclick="translatePage('es')">ES</span>
+<span onclick="translatePage('en')">EN</span>
+</div>
+
+<div class="menu-toggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</header>
+
+
+
+<!-- PAGOS -->
+<section class="pagos-section">
+
+<div class="pagos-container">
+
+<!-- TRANSFERENCIA -->
+<div class="pago-box">
+
+<h2>Transferencia Bancaria</h2>
+
+<p><strong>Nombre:</strong> Sofía Gambi Bravo</p>
+<p><strong>RUT:</strong> 21.527.903-0</p>
+<p><strong>Banco:</strong> Banco Falabella</p>
+<p><strong>Tipo de Cuenta:</strong> Cuenta Corriente</p>
+<p><strong>Nº Cuenta:</strong> 19801408810</p>
+<p><strong>Email:</strong> sofiamichelagb@gmail.com</p>
+
+<ul>
+<li>Realiza la transferencia y luego envíanos el comprobante por WhatsApp.</li>
+<li>Si no recibimos el comprobante, el pago no podrá ser registrado.</li>
+<li>La confirmación del pago puede tardar hasta 72 horas.</li>
+</ul>
+
+</div>
+
+
+<!-- TARJETAS -->
+<div class="pago-box">
+
+<h2>Tarjetas de Crédito / Débito</h2>
+
+<ul>
+<li>Puedes pagar con tarjetas de crédito.</li>
+<li>También aceptamos tarjetas de débito.</li>
+<li>Pagos seguros a través de plataformas digitales.</li>
+<li>Para pagos especiales puedes solicitar link de pago por WhatsApp.</li>
+</ul>
+
+</div>
+
+</div>
+
+
+
+<!-- BENEFICIOS -->
+<div class="pagos-beneficios">
+
+<div class="beneficio">
+<h3>Enviamos tu compra</h3>
+<p>Realizamos envíos a todo Chile.</p>
+</div>
+
+<div class="beneficio">
+<h3>Paga como quieras</h3>
+<p>Tarjetas de crédito, débito o transferencia bancaria.</p>
+</div>
+
+<div class="beneficio">
+<h3>Compra con seguridad</h3>
+<p>Tus datos siempre están protegidos.</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+<footer>
+
+<p>© 2026 VS BOOTS</p>
+
+<p class="footer-contact">
+Síguenos en
+<a href="https://www.instagram.com/selvaniboots" target="_blank" class="ig-link">
+<img src="img/insta.webp" alt="Instagram VS Boots">
+</a>
+</p>
+
+</footer>
+
+
+
+<!-- TRADUCTOR OCULTO -->
+<div id="google_translate_element" style="display:none"></div>
+
+<script>
+
+function googleTranslateElementInit(){
+new google.translate.TranslateElement(
+{pageLanguage:'es'},
+'google_translate_element'
+);
+}
+
+function translatePage(lang){
+let select = document.querySelector(".goog-te-combo");
+if(select){
+select.value = lang;
+select.dispatchEvent(new Event("change"));
+}
+}
+
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+</body>
+</html>

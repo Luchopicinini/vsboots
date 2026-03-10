@@ -106,7 +106,7 @@ display:block;
 .hero{
 height:100vh;
 
-background-image:url("../img/hero1.webp");
+background-image:url("../img/kate1.png" );
 background-size:cover;
 background-position:center;
 
@@ -1053,3 +1053,147 @@ font-size:13px;
 }
 }
 
+/*pagos*/
+
+/* PAGOS */
+
+.pagos-section{
+max-width:1200px;
+margin:auto;
+padding:80px 20px;
+font-family: 'Helvetica', Arial, sans-serif;
+color:#111;
+}
+
+/* TITULO */
+
+.pagos-title{
+text-align:center;
+font-size:32px;
+font-weight:600;
+margin-bottom:60px;
+letter-spacing:1px;
+}
+
+/* GRID PRINCIPAL */
+
+.pagos-container{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:50px;
+margin-bottom:70px;
+}
+
+/* CAJAS */
+
+.pago-box{
+background:#fff;
+border:1px solid #eee;
+padding:35px;
+border-radius:12px;
+transition:all .3s ease;
+}
+
+.pago-box:hover{
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+transform:translateY(-4px);
+}
+
+/* TITULOS */
+
+.pago-box h2{
+font-size:20px;
+margin-bottom:20px;
+font-weight:600;
+}
+
+/* TEXTOS */
+
+.pago-box p{
+margin-bottom:8px;
+font-size:14px;
+color:#444;
+}
+
+/* LISTA */
+
+.pago-box ul{
+margin-top:15px;
+padding-left:18px;
+}
+
+.pago-box li{
+margin-bottom:8px;
+font-size:14px;
+color:#555;
+}
+
+/* BENEFICIOS */
+
+.pagos-beneficios{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:35px;
+margin-top:30px;
+}
+
+.beneficio{
+background:#fff;
+border:1px solid #eee;
+padding:30px;
+border-radius:12px;
+text-align:center;
+transition:.3s;
+}
+
+.beneficio:hover{
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+.beneficio h3{
+font-size:16px;
+margin-bottom:10px;
+font-weight:600;
+}
+
+.beneficio p{
+font-size:14px;
+color:#555;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:900px){
+
+.pagos-container{
+grid-template-columns:1fr;
+}
+
+.pagos-beneficios{
+grid-template-columns:1fr;
+gap:20px;
+}
+
+}
+
+/* idioma */
+
+.language-switch{
+display:flex;
+gap:10px;
+margin-left:20px;
+font-size:13px;
+font-weight:600;
+cursor:pointer;
+}
+
+.language-switch span{
+padding:4px 8px;
+border-radius:5px;
+transition:0.2s;
+}
+
+.language-switch span:hover{
+background:black;
+color:white;
+}
