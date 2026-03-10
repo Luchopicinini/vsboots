@@ -2,6 +2,8 @@
 /* RESET */
 /* ============================= */
 
+
+
 *{
 margin:0;
 padding:0;
@@ -461,35 +463,42 @@ border-color:transparent
 
 .product-card{
 background:#fff;
-border-radius:10px;
+border-radius:12px;
 overflow:hidden;
-box-shadow:0 4px 10px rgba(0,0,0,0.08);
+box-shadow:0 6px 16px rgba(0,0,0,0.08);
 transition:0.3s;
 }
 
 .product-card:hover{
-transform:translateY(-5px);
-box-shadow:0 10px 20px rgba(0,0,0,0.15);
+transform:translateY(-6px);
+box-shadow:0 14px 30px rgba(0,0,0,0.15);
 }
 
 /* IMAGEN */
 
 .product-img-wrap{
 width:100%;
-height:260px;
+height:280px; /* un poco más alto */
 position:relative;
 overflow:hidden;
+background:#f5f5f5;
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
 .product-img-wrap img{
 width:100%;
 height:100%;
 object-fit:cover;
+object-position:center; /* centra la bota */
 position:absolute;
 top:0;
 left:0;
-transition:opacity .4s;
+transition:opacity .35s ease, transform .4s ease;
 }
+
+/* hover */
 
 .hover-img{
 opacity:0;
@@ -497,6 +506,7 @@ opacity:0;
 
 .product-card:hover .hover-img{
 opacity:1;
+transform:scale(1.05);
 }
 
 .product-card:hover .main-img{
@@ -506,7 +516,7 @@ opacity:0;
 /* INFO */
 
 .product-info{
-padding:15px;
+padding:16px;
 }
 
 /* TITULO + PRECIO */
@@ -603,86 +613,193 @@ opacity:0;
 /*envios*/
 
 /* ===== SECCIÓN ENVIOS ===== */
-.shipping-section {
-  padding: 60px 20px;
-  background: #f9f9f9;
-  text-align: center;
+/* ===== SECCIÓN ENVÍOS ===== */
+/* TITULO SECCIÓN */
+
+.shipping-section .section-title{
+font-size:36px;
+font-weight:600;
+margin-bottom:10px;
+letter-spacing:1px;
+color:#111;
+position:relative;
+display:inline-block;
 }
 
-.shipping-section .section-title {
-  font-size: 36px;
-  font-weight: 600;
-  margin-bottom: 10px;
+/* linea decorativa debajo */
+
+.shipping-section .section-title::after{
+content:"";
+display:block;
+width:60px;
+height:3px;
+background:#000;
+margin:12px auto 0;
+border-radius:2px;
 }
 
-.shipping-section .section-subtitle {
-  font-size: 18px;
-  color: #555;
-  margin-bottom: 40px;
+.shipping-section .section-subtitle{
+font-size:18px;
+color:#666;
+margin-bottom:50px;
+max-width:500px;
+margin-left:auto;
+margin-right:auto;
 }
 
-/* GRID ENVÍOS */
-.shipping-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
+.shipping-section{
+padding:80px 20px;
+background:#f9f9f9;
 }
 
-/* CARD ENVÍO */
-.shipping-card {
-  background: #fff;
-  padding: 30px 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.shipping-container{
+max-width:1200px;
+margin:auto;
+text-align:center;
 }
 
-.shipping-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+/* TITULOS */
+
+.section-title{
+font-size:36px;
+font-weight:600;
+margin-bottom:10px;
+letter-spacing:1px;
 }
 
-.shipping-icon {
-  font-size: 40px;
-  color: #222;
-  margin-bottom: 15px;
+.section-subtitle{
+font-size:18px;
+color:#555;
+margin-bottom:50px;
 }
 
-.shipping-card h3 {
-  font-size: 20px;
-  margin-bottom: 8px;
+/* GRID */
+
+.shipping-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
 }
 
-.shipping-card p {
-  font-size: 16px;
-  color: #555;
-  margin: 4px 0;
+/* TARJETAS */
+
+.shipping-card{
+background:#fff;
+padding:35px 25px;
+border-radius:14px;
+box-shadow:0 6px 16px rgba(0,0,0,0.08);
+transition:.35s;
+position:relative;
+overflow:hidden;
 }
 
-.shipping-price {
-  font-weight: 600;
-  color: #222;
-  margin-top: 10px;
+/* linea animada */
+
+.shipping-card::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:0%;
+height:3px;
+background:#000;
+transition:.4s;
+}
+
+.shipping-card:hover::before{
+width:100%;
+}
+
+/* hover */
+
+.shipping-card:hover{
+transform:translateY(-8px);
+box-shadow:0 16px 32px rgba(0,0,0,0.15);
+}
+
+/* ICONO */
+
+.shipping-icon{
+font-size:38px;
+color:#222;
+margin-bottom:18px;
+transition:.3s;
+}
+
+/* animación icono */
+
+.shipping-card:hover .shipping-icon{
+transform:scale(1.2) rotate(-6deg);
+}
+
+/* TEXTO */
+
+.shipping-card h3{
+font-size:20px;
+margin-bottom:6px;
+}
+
+.shipping-time{
+font-size:16px;
+color:#666;
+margin-bottom:12px;
+}
+
+.shipping-price{
+font-weight:700;
+font-size:18px;
+color:#111;
+}
+
+/* ANIMACIÓN APARICIÓN */
+
+.shipping-card{
+opacity:0;
+transform:translateY(30px);
+animation:shippingFade .8s ease forwards;
+}
+
+.shipping-card:nth-child(2){
+animation-delay:.15s;
+}
+
+.shipping-card:nth-child(3){
+animation-delay:.3s;
+}
+
+@keyframes shippingFade{
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 /* RESPONSIVE */
-@media (max-width: 1024px) {
-  .shipping-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
+
+@media (max-width:1024px){
+
+.shipping-grid{
+grid-template-columns:repeat(2,1fr);
 }
 
-@media (max-width: 600px) {
-  .shipping-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
 }
 
+@media (max-width:600px){
 
+.shipping-grid{
+grid-template-columns:1fr;
+gap:20px;
+}
+
+.section-title{
+font-size:28px;
+}
+
+.section-subtitle{
+font-size:16px;
+}
+
+}
 
 /*-----------------------------------------------------------------------*/
 
@@ -1086,129 +1203,153 @@ font-size:13px;
 
 /* PAGOS */
 
+/* ===== SECCION PAGOS ===== */
+
 .pagos-section{
+padding:80px 20px;
+background:#f7f7f7;
+font-family:system-ui, -apple-system, sans-serif;
+}
+
+/* CONTENEDOR */
+
+.pagos-container{
 max-width:1200px;
 margin:auto;
-padding:80px 20px;
-font-family: 'Helvetica', Arial, sans-serif;
-color:#111;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:40px;
+margin-bottom:70px;
+}
+
+/* TARJETAS */
+
+.pago-box{
+background:#fff;
+padding:35px;
+border-radius:14px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+transition:all .35s ease;
+position:relative;
+overflow:hidden;
+}
+
+/* LINEA SUPERIOR ANIMADA */
+
+.pago-box::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:0%;
+height:4px;
+background:#000;
+transition:.4s;
+}
+
+.pago-box:hover::before{
+width:100%;
+}
+
+/* HOVER */
+
+.pago-box:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
 }
 
 /* TITULO */
 
-.pagos-title{
-text-align:center;
-font-size:32px;
-font-weight:600;
-margin-bottom:60px;
-letter-spacing:1px;
-}
-
-/* GRID PRINCIPAL */
-
-.pagos-container{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:50px;
-margin-bottom:70px;
-}
-
-/* CAJAS */
-
-.pago-box{
-background:#fff;
-border:1px solid #eee;
-padding:35px;
-border-radius:12px;
-transition:all .3s ease;
-}
-
-.pago-box:hover{
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
-transform:translateY(-4px);
-}
-
-/* TITULOS */
-
 .pago-box h2{
-font-size:20px;
+font-size:24px;
 margin-bottom:20px;
 font-weight:600;
+letter-spacing:.5px;
 }
 
-/* TEXTOS */
+/* TEXTO */
 
 .pago-box p{
+font-size:15px;
 margin-bottom:8px;
-font-size:14px;
 color:#444;
+}
+
+.pago-box strong{
+color:#111;
 }
 
 /* LISTA */
 
 .pago-box ul{
-margin-top:15px;
+margin-top:20px;
 padding-left:18px;
 }
 
 .pago-box li{
 margin-bottom:8px;
-font-size:14px;
+font-size:15px;
 color:#555;
 }
 
-/* BENEFICIOS */
+/* ===== BENEFICIOS ===== */
 
 .pagos-beneficios{
+max-width:1100px;
+margin:auto;
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:35px;
-margin-top:30px;
+gap:30px;
+text-align:center;
 }
 
+/* BENEFICIO */
+
 .beneficio{
-background:#ffffff;
-border:1px solid #eee;
-padding:30px;
-border-radius:12px;
-text-align:center;
+background:#fff;
+padding:30px 20px;
+border-radius:14px;
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
+transition:.35s;
+}
+
+/* HOVER BENEFICIO */
+
+.beneficio:hover{
+transform:translateY(-6px);
+box-shadow:0 14px 30px rgba(0,0,0,0.12);
+}
+
+/* ICONO */
+
+.beneficio i{
+font-size:36px;
+margin-bottom:12px;
+color:#000;
 transition:.3s;
 }
 
-.beneficio:hover{
-box-shadow:0 8px 25px rgba(0,0,0,0.08);
+/* ANIMACION ICONO */
+
+.beneficio:hover i{
+transform:scale(1.2) rotate(-5deg);
 }
 
+/* TITULO */
+
 .beneficio h3{
-font-size:16px;
-margin-bottom:10px;
-font-weight:600;
+font-size:18px;
+margin-bottom:6px;
 }
+
+/* TEXTO */
 
 .beneficio p{
 font-size:14px;
-color:#555;
+color:#666;
 }
 
-.beneficio i{
-font-size:35px;
-margin-bottom:15px;
-color:#000;
-}
-
-.beneficio{
-background:#fafafa;
-padding:30px;
-border-radius:12px;
-text-align:center;
-transition:0.3s;
-}
-
-.beneficio:hover{
-transform:translateY(-5px);
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-}
-/* RESPONSIVE */
+/* ===== RESPONSIVE ===== */
 
 @media (max-width:900px){
 
@@ -1217,8 +1358,19 @@ grid-template-columns:1fr;
 }
 
 .pagos-beneficios{
+grid-template-columns:1fr 1fr;
+}
+
+}
+
+@media (max-width:600px){
+
+.pagos-beneficios{
 grid-template-columns:1fr;
-gap:20px;
+}
+
+.pago-box{
+padding:25px;
 }
 
 }
@@ -1244,3 +1396,4 @@ transition:0.2s;
 background:black;
 color:white;
 }
+

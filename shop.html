@@ -57,8 +57,8 @@
 <div class="product-card">
 
 <div class="product-img-wrap">
-<img src="img/palermo/2.PNG" class="main-img" alt="Botas Palermo">
-<img src="img/palermo/1.PNG" class="hover-img" alt="Botas Palermo">
+<img src="img/palermo/3.jpg" class="main-img" alt="Botas palermo">
+<img src="img/palermo/1.PNG" class="hover-img" alt="Botas palermo">
 </div>
 
 <div class="product-info">
@@ -69,7 +69,7 @@
 </div>
 
 <div class="product-share">
-<a href="#" class="share-btn" onclick="shareProduct('Botas Palermo')">
+<a href="#" class="share-btn" onclick="shareProduct('Botas Soho')">
 <i class="fa-solid fa-share-nodes"></i> Compartir
 </a>
 </div>
@@ -168,6 +168,37 @@
 </div>
 
 </div>
+
+<!-- PRODUCTO 5 -->
+<div class="col-12 col-sm-6 col-lg-3">
+
+<div class="product-card">
+
+<div class="product-img-wrap">
+<img src="img/lucerna/1.PNG" class="main-img" alt="Botas Tokio">
+<img src="img/lucerna/2.PNG" class="hover-img" alt="Botas Tokio">
+</div>
+
+<div class="product-info">
+
+<div class="product-top">
+<h5 class="product-title">Botas Lucerna</h5>
+<span class="price">$67.990</span>
+</div>
+
+<div class="product-share">
+<a href="#" class="share-btn" onclick="shareProduct('Botas Lucerna')">
+<i class="fa-solid fa-share-nodes"></i> Compartir
+</a>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 </section>
 
 
@@ -198,37 +229,6 @@
 <!-- TRADUCTOR OCULTO -->
 <div id="google_translate_element" style="display:none"></div>
 
-<script>
-
-if (window.innerWidth <= 768) {
-
-const cards = document.querySelectorAll(".product-card");
-
-const observer = new IntersectionObserver(entries => {
-entries.forEach(entry => {
-
-if(entry.isIntersecting){
-
-setTimeout(()=>{
-entry.target.classList.add("show");
-}, 2000); // espera 2 segundos antes de cambiar
-
-}else{
-
-entry.target.classList.remove("show");
-
-}
-
-});
-},{ threshold:0.6 });
-
-cards.forEach(card=>{
-observer.observe(card);
-});
-
-}
-
-</script>
 
 <script>
 
