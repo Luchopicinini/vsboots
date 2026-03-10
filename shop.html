@@ -208,9 +208,15 @@ const observer = new IntersectionObserver(entries => {
 entries.forEach(entry => {
 
 if(entry.isIntersecting){
+
+setTimeout(()=>{
 entry.target.classList.add("show");
+}, 2000); // espera 2 segundos antes de cambiar
+
 }else{
+
 entry.target.classList.remove("show");
+
 }
 
 });
