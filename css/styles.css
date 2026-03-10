@@ -588,13 +588,11 @@ color:#000;
   background: #444;
 }
 
-/* soporte para celular */
-
-.product-card:active .hover-img{
+.product-card.show .hover-img{
 opacity:1;
 }
 
-.product-card:active .main-img{
+.product-card.show .main-img{
 opacity:0;
 }
 
