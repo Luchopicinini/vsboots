@@ -57,8 +57,15 @@
 <div class="product-card">
 
 <div class="product-img-wrap">
-<img src="img/palermo/3.jpg" class="main-img" alt="Botas Palermo">
-<img src="img/palermo/1.PNG" class="hover-img" alt="Botas Palermo">
+
+<button class="img-btn prev">❮</button>
+
+<img src="img/palermo/3.jpg" class="product-img active" alt="Botas Palermo">
+<img src="img/palermo/1.PNG" class="product-img" alt="Botas Palermo">
+<img src="img/palermo/2.PNG" class="product-img" alt="Botas Palermo">
+
+<button class="img-btn next">❯</button>
+
 </div>
 
 <div class="product-info">
@@ -94,15 +101,23 @@
 <div class="product-card">
 
 <div class="product-img-wrap">
-<img src="img/lucerna/1.PNG" class="main-img" alt="Botas Palermo">
-<img src="img/lucerna/2.PNG" class="hover-img" alt="Botas Palermo">
+
+<button class="img-btn prev">❮</button>
+
+<img src="img/lucerna/1.PNG" class="product-img active" alt="Botas Lucerna">
+<img src="img/lucerna/2.PNG" class="product-img" alt="Botas Lucerna">
+<img src="img/lucerna/3.PNG" class="product-img" alt="Botas Lucerna">
+
+
+<button class="img-btn next">❯</button>
+
 </div>
 
 <div class="product-info">
 
 <div class="product-top">
 <h5 class="product-title">Botas Lucerna</h5>
-<span class="price">$60.990</span>
+<span class="price">$69.990</span>
 </div>
 
 <div class="sizes">
@@ -124,21 +139,30 @@
 </div>
 </div>
 
-<!-- PRODUCTO 2 -->
+
+<!-- PRODUCTO 3 -->
 <div class="col-12 col-sm-6 col-lg-3">
 
 <div class="product-card">
 
 <div class="product-img-wrap">
-<img src="img/soho/3.jpg" class="main-img" alt="Botas Palermo">
-<img src="img/soho/1.PNG" class="hover-img" alt="Botas Palermo">
+
+<button class="img-btn prev">❮</button>
+
+<img src="img/soho/3.jpg" class="product-img active" alt="Botas Soho">
+<img src="img/soho/1.PNG" class="product-img" alt="Botas Soho">
+<img src="img/soho/4.jpg" class="product-img" alt="Botas Soho">
+<img src="img/soho/2.PNG" class="product-img" alt="Botas Soho">
+
+<button class="img-btn next">❯</button>
+
 </div>
 
 <div class="product-info">
 
 <div class="product-top">
 <h5 class="product-title">Botas Soho</h5>
-<span class="price">$60.990</span>
+<span class="price">$65.990</span>
 </div>
 
 <div class="sizes">
@@ -160,21 +184,30 @@
 </div>
 </div>
 
-<!-- PRODUCTO 3 -->
+
+<!-- PRODUCTO 4 -->
 <div class="col-12 col-sm-6 col-lg-3">
 
 <div class="product-card">
 
 <div class="product-img-wrap">
-<img src="img/texas/4.jpg" class="main-img" alt="Botas Palermo">
-<img src="img/texas/1.PNG" class="hover-img" alt="Botas Palermo">
+
+<button class="img-btn prev">❮</button>
+
+<img src="img/texas/4.jpg" class="product-img active" alt="Botas Texas">
+<img src="img/texas/1.PNG" class="product-img" alt="Botas Texas">
+<img src="img/texas/2.PNG" class="product-img" alt="Botas Texas">
+<img src="img/texas/3.PNG" class="product-img" alt="Botas Texas">
+
+<button class="img-btn next">❯</button>
+
 </div>
 
 <div class="product-info">
 
 <div class="product-top">
 <h5 class="product-title">Botas Texas</h5>
-<span class="price">$60.990</span>
+<span class="price">$65.990</span>
 </div>
 
 <div class="sizes">
@@ -196,21 +229,30 @@
 </div>
 </div>
 
-<!-- PRODUCTO 4 -->
+
+
+<!-- PRODUCTO 5 -->
 <div class="col-12 col-sm-6 col-lg-3">
 
 <div class="product-card">
 
 <div class="product-img-wrap">
-<img src="img/tokio/4.jpg" class="main-img" alt="Botas Palermo">
-<img src="img/tokio/1.PNG" class="hover-img" alt="Botas Palermo">
+
+<button class="img-btn prev">❮</button>
+
+<img src="img/tokio/5.jpeg" class="product-img active" alt="Botas Texas">
+<img src="img/tokio/2.PNG" class="product-img" alt="Botas Texas">
+<img src="img/tokio/3.png" class="product-img" alt="Botas Texas">
+
+<button class="img-btn next">❯</button>
+
 </div>
 
 <div class="product-info">
 
 <div class="product-top">
 <h5 class="product-title">Botas Tokio</h5>
-<span class="price">$60.990</span>
+<span class="price">$62.990</span>
 </div>
 
 <div class="sizes">
@@ -222,7 +264,7 @@
 </div>
 
 <div class="product-share">
-<a href="#" class="share-btn" onclick="shareProduct('Botas Tokio')">
+<a href="#" class="share-btn" onclick="shareProduct('Botas Soho')">
 <i class="fa-solid fa-share-nodes"></i> Compartir
 </a>
 </div>
@@ -232,15 +274,55 @@
 </div>
 </div>
 
-
-
+</div>
 </section>
 
 
+<script>
 
-</section>
+document.querySelectorAll(".product-img-wrap").forEach(card => {
 
+let images = card.querySelectorAll(".product-img")
+let index = 0
 
+const next = card.querySelector(".next")
+const prev = card.querySelector(".prev")
+
+next.onclick = () => {
+
+images[index].classList.remove("active")
+
+index = (index + 1) % images.length
+
+images[index].classList.add("active")
+
+}
+
+prev.onclick = () => {
+
+images[index].classList.remove("active")
+
+index = (index - 1 + images.length) % images.length
+
+images[index].classList.add("active")
+
+}
+
+/* REINICIAR A LA PRIMERA IMAGEN */
+
+card.closest(".product-card").addEventListener("mouseleave", () => {
+
+images[index].classList.remove("active")
+
+index = 0
+
+images[index].classList.add("active")
+
+})
+
+})
+
+</script>
 <form class="newsletter-form" action="https://formspree.io/f/xeeralre" method="POST">
 
 <input type="hidden" name="formulario" value="Newsletter VS BOOTS">

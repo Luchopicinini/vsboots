@@ -459,18 +459,22 @@ border-color:transparent
 /*-----------------------------------------------------------------------*/
 
 /* PRODUCT CARD */
+/* IMAGEN */
+
+/* PRODUCT CARD */
 
 .product-card{
 background:#fff;
-border-radius:14px;
+border-radius:16px;
 overflow:hidden;
-box-shadow:0 8px 20px rgba(0,0,0,0.08);
-transition:0.3s;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:all .35s ease;
+position:relative;
 }
 
 .product-card:hover{
-transform:translateY(-6px);
-box-shadow:0 16px 35px rgba(0,0,0,0.15);
+transform:translateY(-8px);
+box-shadow:0 20px 45px rgba(0,0,0,0.18);
 }
 
 /* IMAGEN */
@@ -486,36 +490,65 @@ align-items:center;
 justify-content:center;
 }
 
-.product-img-wrap img{
+.product-img{
 width:100%;
 height:100%;
 object-fit:cover;
-object-position:center;
 position:absolute;
 top:0;
 left:0;
+opacity:0;
 transition:opacity .35s ease, transform .4s ease;
 }
 
-/* HOVER IMAGEN */
-
-.hover-img{
-opacity:0;
-}
-
-.product-card:hover .hover-img{
+.product-img.active{
 opacity:1;
-transform:scale(1.06);
 }
 
-.product-card:hover .main-img{
-opacity:0;
+/* ZOOM SUAVE EN HOVER */
+
+.product-card:hover .product-img.active{
+transform:scale(1.05);
 }
 
-/* INFO */
+/* FLECHAS */
+
+.img-btn{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:rgba(0,0,0,0.45);
+color:#fff;
+border:none;
+width:36px;
+height:36px;
+border-radius:50%;
+cursor:pointer;
+z-index:5;
+font-size:16px;
+transition:all .25s ease;
+}
+
+.prev{
+left:12px;
+}
+
+.next{
+right:12px;
+}
+
+.img-btn:hover{
+background:#000;
+transform:translateY(-50%) scale(1.1);
+}
+
+/* INFO PRODUCTO */
 
 .product-info{
-padding:18px;
+padding:20px;
+display:flex;
+flex-direction:column;
+gap:12px;
 }
 
 /* TITULO + PRECIO */
@@ -524,18 +557,17 @@ padding:18px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-margin-bottom:8px;
 }
 
 .product-title{
-font-size:17px;
+font-size:18px;
 font-weight:600;
 color:#111;
 margin:0;
 }
 
 .price{
-font-size:17px;
+font-size:18px;
 font-weight:700;
 color:#640505;
 }
@@ -546,177 +578,106 @@ color:#640505;
 display:flex;
 gap:8px;
 flex-wrap:wrap;
-margin:12px 0 16px 0;
 }
 
 .sizes span{
 border:1px solid #ddd;
 padding:6px 12px;
 font-size:12px;
-border-radius:6px;
+border-radius:20px;
 background:#fafafa;
 cursor:pointer;
-transition:0.2s;
+transition:all .25s ease;
 }
 
 .sizes span:hover{
 background:#111;
 color:#fff;
 border-color:#111;
+transform:translateY(-2px);
 }
 
 /* BOTON COMPARTIR */
 
 .product-share{
 text-align:center;
-margin-top:6px;
+margin-top:8px;
 }
 
 .share-btn{
 font-size:14px;
-color:#333;
+color:#444;
 text-decoration:none;
 display:inline-flex;
 align-items:center;
 gap:6px;
-transition:0.2s;
+padding:8px 14px;
+border-radius:20px;
+background:#f2f2f2;
+transition:all .25s ease;
 }
 
 .share-btn:hover{
-color:#000;
+background:#111;
+color:#fff;
 }
-
-/* GRID PRODUCTOS */
-
-.shop-section .row{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:40px;
-}
-
-/* 3 POR FILA */
-
-.shop-section .col-lg-3{
-flex:0 0 calc(33.333% - 40px);
-max-width:calc(33.333% - 40px);
-}
-
 /* NEWSLETTER */
-.newsletter {
-  padding: 60px 20px;
-  background: #fff;
-  text-align: center;
-}
-.newsletter-text {
-  font-size: 16px;
-  margin: 10px 0 30px 0;
-}
-.newsletter-form {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-.newsletter-form input {
-  padding: 12px 16px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 50px;
-  flex: 1 1 250px;
-}
-.newsletter-form button {
-  padding: 12px 24px;
-  font-size: 16px;
-  border: none;
-  border-radius: 50px;
-  background: #222;
-  color: #fff;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-.newsletter-form button:hover {
-  background: #444;
+
+.newsletter{
+padding:60px 20px;
+background:#fff;
+text-align:center;
 }
 
-.product-card.show .hover-img{
-opacity:1;
-}
-
-.product-card.show .main-img{
-opacity:0;
-}
-/* ============================= */
-/* RESPONSIVE SHOP GRID */
-/* ============================= */
-
-/* DESKTOP GRANDE */
-
-@media (min-width:1200px){
-
-.shop-section .col-lg-3{
-flex:0 0 calc(33.333% - 40px);
-max-width:calc(33.333% - 40px);
-}
-
-}
-
-/* TABLET */
-
-@media (max-width:992px){
-
-.shop-section .col-lg-3{
-flex:0 0 calc(50% - 30px);
-max-width:calc(50% - 30px);
-}
-
-.product-img-wrap{
-height:260px;
-}
-
-}
-
-/* CELULAR */
-
-@media (max-width:576px){
-
-.shop-section .col-lg-3{
-flex:0 0 100%;
-max-width:100%;
-}
-
-.product-img-wrap{
-height:500px;
-}
-
-.product-title{
+.newsletter-text{
 font-size:16px;
+margin:10px 0 30px 0;
+color:#555;
 }
 
-.price{
-font-size:16px;
+/* FORMULARIO */
+
+.newsletter-form{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:10px;
+flex-wrap:wrap;
+max-width:500px;
+margin:auto;
 }
 
-.sizes span{
-padding:5px 10px;
-font-size:11px;
+.newsletter-form input{
+padding:12px 16px;
+font-size:15px;
+border:1px solid #ccc;
+border-radius:50px;
+flex:1;
+outline:none;
+transition:0.3s;
 }
 
+.newsletter-form input:focus{
+border-color:#640505;
 }
 
-/* CELULARES MUY PEQUEÑOS */
+/* BOTON */
 
-@media (max-width:400px){
-
-.product-img-wrap{
-height:500px;
+.newsletter-form button{
+padding:12px 24px;
+font-size:15px;
+border:none;
+border-radius:50px;
+background:#111;
+color:#fff;
+cursor:pointer;
+transition:0.3s;
 }
 
-.product-info{
-padding:14px;
+.newsletter-form button:hover{
+background:#640505;
 }
 
-}
 
 /*-----------------------------------------------------------------------*/
 
